@@ -2,11 +2,44 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>BookReviewNow</title> 
+  <meta charset="UTF-8">
+  <title>BookReviewNow</title> 
 </head>
 <body>
-    <h1>Welcome to BookReviewNow</h1>
-  <script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="255615"></script>
+  <h1>Welcome to BookReviewNow</h1>
+
+  <!-- Paragraph to display the ad ID -->
+  <p id="ad-id-display">Loading ad...</p>
+  
+  <script type="text/javascript">
+    // Array of script sources with unique `data-admpid`
+    var adScripts = [
+      { src: "https://js.onclckmn.com/static/onclicka.js", dataAdmpid: "255997" },
+      { src: "https://js.onclckmn.com/static/onclicka.js", dataAdmpid: "255995" },
+      { src: "https://js.onclckmn.com/static/onclicka.js", dataAdmpid: "255993" },
+      { src: "https://js.onclckmn.com/static/onclicka.js", dataAdmpid: "255991" },
+      { src: "https://js.onclckmn.com/static/onclicka.js", dataAdmpid: "255989" },
+      { src: "https://js.onclckmn.com/static/onclicka.js", dataAdmpid: "255615" }
+    ];
+
+    // Select a random ad script
+    var randomAdScript = adScripts[Math.floor(Math.random() * adScripts.length)];
+
+    // Get the <p> element where we will display the ad ID
+    var adIdDisplay = document.getElementById('ad-id-display');
+
+    // Update the <p> tag with the ad ID
+    adIdDisplay.textContent = 'Ad loaded with ID: ' + randomAdScript.dataAdmpid;
+
+    // Create a new <script> element
+    var scriptElement = document.createElement('script');
+    scriptElement.async = true;
+    scriptElement.src = randomAdScript.src;
+    scriptElement.setAttribute('data-admpid', randomAdScript.dataAdmpid);
+
+    // Append the script to the head of the document
+    document.head.appendChild(scriptElement);
+  </script>
+
 </body>
 </html>
