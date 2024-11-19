@@ -7,25 +7,39 @@
 </head>
 <body>
   <h1>Welcome to BookReviewNow</h1>
-  <script>
-  // Array of ad scripts
-  const adScripts = [
-    '<ins style="width: 0px;height:0px" data-width="0" data-height="0" class="u334f6af46d" data-domain="//125700.shop" data-affquery="/3c999b030e39930ea789/334f6af46d/?placementName=default"><script src="//125700.shop/js/responsive.js" async></script></ins>',
-    '<ins style="width: 0px;height:0px" data-width="0" data-height="0" class="h7bdd87f760" data-domain="//125700.shop" data-affquery="/3c999b030e39930ea789/7bdd87f760/?placementName=default"><script src="//125700.shop/js/responsive.js" async></script></ins>',
-    '<ins style="width: 0px;height:0px" data-width="0" data-height="0" class="d4d0403063c" data-domain="//125700.shop" data-affquery="/3c999b030e39930ea789/4d0403063c/?placementName=default"><script src="//125700.shop/js/responsive.js" async></script></ins>',
-    '<ins style="width: 0px;height:0px" data-width="0" data-height="0" class="z2d3e6445f8" data-domain="//125700.shop" data-affquery="/3c999b030e39930ea789/2d3e6445f8/?placementName=default"><script src="//125700.shop/js/responsive.js" async></script></ins>',
-    '<ins style="width: 0px;height:0px" data-width="0" data-height="0" class="ff6f8ec1acc" data-domain="//125700.shop" data-affquery="/3c999b030e39930ea789/f6f8ec1acc/?placementName=default"><script src="//125700.shop/js/responsive.js" async></script></ins>'
-  ];
+<script>
+    // Array of ad IDs
+    const adIds = [
+        "256005",  // Ad ID 1
+        "256003",  // Ad ID 2
+        "256001",  // Ad ID 3
+        "255997",  // Ad ID 4
+        "255995",
+        "255993",
+        "255991",
+        "255989",
+        "255615"
+    ];
 
-  // Select a random ad script
-  const randomAdScript = adScripts[Math.floor(Math.random() * adScripts.length)];
+    // Function to load the script dynamically
+    function loadRandomAd() {
+        // Pick a random ad ID from the array
+        const randomAdId = adIds[Math.floor(Math.random() * adIds.length)];
 
-  // Inject the selected ad script into the page
-  document.write(randomAdScript);
+        // Create the script element
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://js.onclckmn.com/static/onclicka.js`;
+        script.setAttribute('data-admpid', randomAdId);
+
+        // Append the script to the document
+        document.body.appendChild(script);
+    }
+
+    // Load the ad when the page loads
+    window.onload = loadRandomAd;
 </script>
 
-  <ins style="width: 728px;height:90px" data-width="728" data-height="90" class="r224959d4f0" data-domain="//125700.shop" data-affquery="/46cbd19ce6298a31b22a/224959d4f0/?placementName=default"><script src="//125700.shop/js/responsive.js" async></script></ins>
-  <script type="text/javascript" src="//125700.shop/34d5b923f0c35536031f/ed878544f3/?placementName=default"></script>
-  <p>V 5.0</p>
+  <p>V 6.0</p>
 </body>
 </html>
