@@ -8,38 +8,6 @@
 </head>
 <body>
   <h1>Welcome to BookReviewNow</h1>
-<script>
-    // Array of ad IDs
-    const adIds = [
-        "256005",  // Ad ID 1
-        "256003",  // Ad ID 2
-        "256001",  // Ad ID 3
-        "255997",  // Ad ID 4
-        "255995",
-        "255993",
-        "255991",
-        "255989",
-        "255615"
-    ];
-
-    // Function to load the script dynamically
-    function loadRandomAd() {
-        // Pick a random ad ID from the array
-        const randomAdId = adIds[Math.floor(Math.random() * adIds.length)];
-
-        // Create the script element
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = `https://js.onclckmn.com/static/onclicka.js`;
-        script.setAttribute('data-admpid', randomAdId);
-
-        // Append the script to the document
-        document.body.appendChild(script);
-    }
-
-    // Load the ad when the page loads
-    window.onload = loadRandomAd;
-</script>
 
   <p>V 6.0</p>
 </body>
