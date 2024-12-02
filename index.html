@@ -159,6 +159,51 @@
         </td>
     </tr>
   </table> 
+
+
+
+    
+   <h1 id="adTitle">Welcome to My Site</h1>
+  <button id="loadAdButton">Load Random Ad</button>
+  <div id="ad-container"></div>
+
+  <script>
+    // Array of ad scripts with different data-admpid values
+    const adScripts = [
+      { src: 'https://js.wpadmngr.com/static/adManager.js', dataAdmpid: '264445' },
+      { src: 'https://js.wpadmngr.com/static/adManager.js', dataAdmpid: '264443' },
+      { src: 'https://js.wpadmngr.com/static/adManager.js', dataAdmpid: '264439' }
+    ];
+
+    // Function to load a random ad script
+    function loadRandomAdScript() {
+      const randomIndex = Math.floor(Math.random() * adScripts.length);
+      const selectedAd = adScripts[randomIndex];
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = selectedAd.src;
+      script.setAttribute('data-admpid', selectedAd.dataAdmpid);
+
+      // Update H1 tag with ClickAdila and Ad ID
+      const adTitle = document.getElementById('adTitle');
+      adTitle.textContent = `ClickAdila - Ad ID: ${selectedAd.dataAdmpid}`;
+
+      // Clear existing ad if any
+      const adContainer = document.getElementById('ad-container');
+      adContainer.innerHTML = '';
+      
+      // Append the new script
+      adContainer.appendChild(script);
+    }
+
+    // Attach event listener to the button
+    document.getElementById('loadAdButton').addEventListener('click', loadRandomAdScript);
+  </script>
+
+
+
+
+    
 <hr>
   <footer>Copyright &copy; WatchReview 2001-2784</footer>
 </body>
